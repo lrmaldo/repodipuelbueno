@@ -27,6 +27,10 @@ class FrontController extends Controller {
 		return view('contacto');
 	}
 
+	public function inscripciones(){
+		return view('inscripciones.create');
+	}
+
 	
 
 }

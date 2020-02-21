@@ -20,6 +20,11 @@ Route::resource('/','FrontController');
 Route::get('/contacto','FrontController@contacto');
 
 
+
+
+////inscripciones
+Route::resource('/inscripciones','FrontController@inscripciones');
+
 ///Usuario
 
 
