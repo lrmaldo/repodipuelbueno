@@ -20,6 +20,13 @@ Route::resource('/','FrontController');
 Route::get('/contacto','FrontController@contacto');
 
 
+//eventos 
+
+Route::resource('eventos','EventosController');
+Route::post('eventos/store','EventosController@store');
+
+
+
 
 
 ////inscripciones

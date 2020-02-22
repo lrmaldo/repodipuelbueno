@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller {
 
+
+
 	/*
 	|--------------------------------------------------------------------------
 	| Registration & Login Controller
@@ -19,7 +21,8 @@ class AuthController extends Controller {
 	*/
 
 	use AuthenticatesAndRegistersUsers;
-
+	//protected $loginPath = '';
+	protected $redirectTo = '/dashboard';
 	/**
 	 * Create a new authentication controller instance.
 	 *
@@ -34,5 +37,10 @@ class AuthController extends Controller {
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
+
+	public function setPasswordAttribute($password)
+{
+	$this->attributes['password'] = bcrypt($password);
+}
 
 }

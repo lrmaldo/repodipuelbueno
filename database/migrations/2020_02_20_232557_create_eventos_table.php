@@ -20,7 +20,7 @@ class CreateEventosTable extends Migration {
 			$table->string('nombre');
 			$table->string('url_imagen');
 			$table->text('descripcion');
-			$table->timestamp('fecha_evento')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->datetime('fecha_evento');
 			$table->text('comentario');
 			
 		});

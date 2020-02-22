@@ -10,7 +10,7 @@ class inscripciones extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['nombre','fecha_de_nacimiento', 'email', 'num_celular','institulo','localidad','asistio','id_evento'];
+	protected $fillable = ['id','nombre','fecha_de_nacimiento', 'email', 'num_celular','institulo','localidad','asistio','id_evento'];
 
 
 }

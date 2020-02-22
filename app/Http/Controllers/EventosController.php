@@ -2,17 +2,12 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\eventos;
 
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller {
+class EventosController extends Controller {
 
-
-
-	
-	public function __construct(){
-		$this->middleware('auth',['only'=>'index']);
-	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -20,7 +15,7 @@ class DashboardController extends Controller {
 	 */
 	public function index()
 	{
-		return view('dashboard.index');
+		//
 	}
 
 	/**
@@ -30,7 +25,7 @@ class DashboardController extends Controller {
 	 */
 	public function create()
 	{
-		//
+	 return view('eventos.create');
 	}
 
 	/**
@@ -38,9 +33,20 @@ class DashboardController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+
+		//$datetime = new  date_format($request->input('fecha'),"")
+		$date = Carbon\Carbon::createFromFormat('YYYY-MM-DD HH:MM',$request->input('fecha'));
+	/**eventos::create([
+		'nombre'=> $request()->input('nombre'),
+		'url_imagen'=> 'img/eventos/',
+		'descripcion'=> $request()->input('descripcion'),
+		'fecha_evento'=> $request()->input('fecha'),
+		'comentario'=> $request()->input('comentario'),
+	]);*/
+	//eventos::create($request->all());
+	return $request->all()."-----".$date;
 	}
 
 	/**
@@ -85,10 +91,6 @@ class DashboardController extends Controller {
 	public function destroy($id)
 	{
 		//
-	}
-
-	public function login(){
-		return view('auth/login');
 	}
 
 }
