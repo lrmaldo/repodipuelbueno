@@ -62,13 +62,13 @@
     <div class="bg-circle-3 bg-circle"></div>
     <div class="bg-circle-4 bg-circle"></div>
   </header>
-
+<div >
   @yield('content')
-
+</div>
   <!-- Footer -->
   <footer class="py-5 bg-black">
     <div class="container">
-      <p class="m-0 text-center text-white small">Copyright &copy; DiME 2019</p>
+      <p class="m-0 text-center text-white small">Copyright &copy; Sattlink 2020</p>
     </div>
     <!-- /.container -->
   </footer>

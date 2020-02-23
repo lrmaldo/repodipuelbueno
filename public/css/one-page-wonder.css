@@ -41,14 +41,14 @@ h6 {
 }
 
 .navbar-custom .navbar-brand {
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 1rem;
   letter-spacing: 0.1rem;
   font-weight: 700;
 }
 
 .navbar-custom .navbar-nav .nav-item .nav-link {
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1rem;

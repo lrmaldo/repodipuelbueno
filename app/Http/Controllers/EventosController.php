@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\eventos;
+use Carbon;
 
 use Illuminate\Http\Request;
 
@@ -35,9 +36,11 @@ class EventosController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		
+		//$datetime = new  date_format($request->input('fecha'),"YYYY-MM-DD HH:MM");
 
-		//$datetime = new  date_format($request->input('fecha'),"")
-		$date = Carbon\Carbon::createFromFormat('YYYY-MM-DD HH:MM',$request->input('fecha'));
+		$date = Carbon\Carbon::parse($request->input('fecha'))->format('d-m-Y h:i');
+	//	$date = Carbon\Carbon::createFromFormat('d-m-Y h:i',"");
 	/**eventos::create([
 		'nombre'=> $request()->input('nombre'),
 		'url_imagen'=> 'img/eventos/',
@@ -46,7 +49,7 @@ class EventosController extends Controller {
 		'comentario'=> $request()->input('comentario'),
 	]);*/
 	//eventos::create($request->all());
-	return $request->all()."-----".$date;
+	return $request->all()."------".$date;
 	}
 
 	/**

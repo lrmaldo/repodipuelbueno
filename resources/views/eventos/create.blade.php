@@ -38,7 +38,7 @@
                 <div class="col-md-8">
                   
                   
-                <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy HH:ii p" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy HH:ii p" data-link-field="dtp_input2" data-link-format="dd-mm-yyyy">
                    <input type="text" class="form-control" name="fecha" required>
                     <span class="add-on"><i class="icon-remove"></i></span>
 					          <span class="add-on"><i class="icon-th"></i></span>
