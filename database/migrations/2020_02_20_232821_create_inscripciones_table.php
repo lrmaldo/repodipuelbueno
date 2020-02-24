@@ -17,11 +17,14 @@ class CreateInscripcionesTable extends Migration {
 			$table->engine = 'InnoDB';
 			$table->increments('id');
 				$table->string('nombre');
-				$table->date('fecha_de_nacimiento');
-				$table->string('email')->unique();
+				$table->string('direccion');
+				$table->string('municipio');
+				//$table->string('CP');
 				$table->string('num_celular');
-				$table->text('institulo');
-				$table->text('localidad');
+				$table->string('email')->unique();
+				$table->string('edad');
+				$table->string('sexo');
+				$table->string('instituto');
 				$table->boolean('asistio')->default(false);
 				$table->integer('id_evento')->unsigned();
 				$table->foreign('id_evento')->references('id')->on('eventos');

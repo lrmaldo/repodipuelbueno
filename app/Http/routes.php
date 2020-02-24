@@ -28,6 +28,11 @@ Route::post('eventos/store','EventosController@store');
 
 
 
+//registo
+Route::resource('/registro','RegistroController');
+
+Route::post('/registro/store','RegistroController@store');
+
 
 ////inscripciones
 Route::resource('/','FrontController@inscripciones');

@@ -29,129 +29,120 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom ">
-    <div class="container">
-      <a class="navbar-brand" href="/">DiME</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('/') }}">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('/') }}">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url() }}">Eventos</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  
   <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
-			<div class="card-header">
+			<div class="card-header text-center">
+
 			<!--iframe src="http://free.timeanddate.com/countdown/i763o53b/n258/cf100/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs100/szw320/szh135/tatTime%20left%20to%20Event%20in/tac000/tptTime%20since%20Event%20started%20in/tpc000/mac000/mpc000/iso2020-02-25T10:00:00" allowTransparency="true" frameborder="0" width="320" height="135"></iframe-->
-				
+				<!-- /////////////contador de dias ********************************************
 				<div class="card-body">
 				<h1	class="input-group-prepend">Aún no esta listo espera en:</h1>
 				<h3	class="input-group-prepend" id="countbox"></h3>
-				</div>
+				</div--> 
+				
 
-				<!--h3>Registro</h3>
+				
+				<h2>DiME</h2>
+				<h3>Registro</h3>
+				
 				
 			</div>
-			<div class="card-body">
-			<form  role="form" method="POST" action="{{ url('/usuario/store') }}">
+			
+			<form  role="form" method="POST" action="{{ url('/registro/store') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
 						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Nombre Completo</label>
+							<label class="col-md-4 control-label">Nombre Completo:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+								<input type="text" class="form-control" name="nombre" value="{{ old('name') }}" placeholder="Nombre completo" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Fecha de nacimiento</label>
+							<label class="col-md-4 control-label">Dirección Completa:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Email</label>
-							</div>
-							
-							<div class="col-md-8">
-								<input type="email" class="form-control" name="email">
-							</div>
-						</div>
-
-						<div class="form-group">
-						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Número de celular</label>
-							</div>
-							
-							<div class="col-md-8">
-								<input type="phone" class="form-control" name="celular">
-							</div>
-						</div>
-                        <div class="form-group">
-						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Dirección</label>
-							</div>
-							<div class="col-md-8">
-								<input type="number" class="form-control" name="Direccion">
+								<input type="text" class="form-control" name="direccion" placeholder="Calle o Av, Número,  CP"  required>
 							</div>
 						</div>  
-                        <div class="form-group">
-						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Municipio</label>
-							</div>
-							<div class="col-md-8">
-								<input type="text" class="form-control" name="municipio">
-							</div>
-						</div>
-                        <div class="form-group">
-						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Colonia</label>
-							</div>
-							<div class="col-md-8">
-								<input type="text" class="form-control" name="colonia">
-							</div>
-						</div>
+
+						 
+
+
 						<div class="form-group">
 						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Sexo</label>
+							<label class="col-md-4 control-label">Municipio:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="sexo">
+								<input type="text" class="form-control" name="municipio" placeholder="Ejem. San Juan Bautista Tuxtepec"  required>
 							</div>
 						</div>
+
+						
+
+
 						<div class="form-group">
 						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Edad</label>
+							<label class="col-md-4 control-label">Número de celular:*</label>
 							</div>
+							
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="edad">
+								<input type="phone" class="form-control" name="celular" placeholder="10 digitos" required>
 							</div>
 						</div>
+
+
 						<div class="form-group">
 						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Institulo Educativo</label>
+							<label class="col-md-4 control-label">Email:*</label>
+							</div>
+							
+							<div class="col-md-8">
+								<input type="email" class="form-control" name="email" placeholder="ejemplo@correo.com" required>
+							</div>
+						</div>
+                        
+
+
+					
+
+
+						<div class="form-group">
+						<div class="input-group-prepend">
+							<label class="col-md-4 control-label">Edad:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="instituto">
+								<input type="number" min="15" max="100"  class="form-control" name="edad" value="18"  required>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+						<div class="input-group-prepend">
+							<label class="col-md-4 control-label">Sexo:*</label>
+							</div>
+							<div class="col-md-8">
+									
+							<select name="sexo" class="form-control"  required>
+        					<option >Masculino</option>
+        					<option>Feminino</option>
+							</select>
+							</div>
+						</div>
+					
+						
+						<div class="form-group">
+						<div class="input-group-prepend">
+							<label class="col-md-4 control-label">Instituto Educativo:*</label>
+							</div>
+							<div class="col-md-8">
+								<input type="text" class="form-control" name="instituto" placeholder="Instituto educativo"   required>
 							</div>
 						</div>
 
@@ -164,11 +155,11 @@
 								</button>
 							</div>
 						</div>
-					</form-->
+					</form>
 
-			</div>
 			
-		</div>
+			
+		
 	</div>
 </div>
 

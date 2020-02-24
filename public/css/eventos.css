@@ -2,9 +2,10 @@
     html,body{
        
         background-image: url('/img/eventos/portada_evento.png');
-        background-size: cover;
+       
         background-repeat: no-repeat;
         background-attachment: fixed;
+        background-size: 100% 100%;
         height: 100%;
         font-family: 'Numans', sans-serif;
         }
@@ -35,9 +36,12 @@
     cursor: pointer;
     }
     
-    .card-header h3{
+    .card-header  h2{
     color: white;
     }
+    .card-header  h3{
+        color: white;
+        }
 
 
 .social_icon{
