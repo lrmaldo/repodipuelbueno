@@ -41,10 +41,10 @@
             <a class="nav-link" href="{{ url('/') }}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('contacto') }}">Contacto</a>
+            <a class="nav-link" href="{{ url('/') }}">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('inscripciones/create') }}">Eventos</a>
+            <a class="nav-link" href="{{ url() }}">Eventos</a>
           </li>
         </ul>
       </div>
@@ -55,7 +55,14 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Registro</h3>
+			<!--iframe src="http://free.timeanddate.com/countdown/i763o53b/n258/cf100/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs100/szw320/szh135/tatTime%20left%20to%20Event%20in/tac000/tptTime%20since%20Event%20started%20in/tpc000/mac000/mpc000/iso2020-02-25T10:00:00" allowTransparency="true" frameborder="0" width="320" height="135"></iframe-->
+				
+				<div class="card-body">
+				<h1	class="input-group-prepend">Aún no esta listo espera en:</h1>
+				<h3	class="input-group-prepend" id="countbox"></h3>
+				</div>
+
+				<!--h3>Registro</h3>
 				
 			</div>
 			<div class="card-body">
@@ -157,13 +164,64 @@
 								</button>
 							</div>
 						</div>
-					</form>
+					</form-->
 
 			</div>
 			
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+
+function GetCount(){
+		
+			año=2020;
+			mes=2;
+			dia=26;
+			hora=12;
+			minuto=0;
+			segundo=0;
+			urlsitio = 'http://www.irineomolina.sattlink.com/'; //url del sitio web final			
+
+			dateFuture = new Date(año, mes-1 , dia, hora, minuto, segundo);	
+		dateNow = new Date();                                             
+		amount = dateFuture.getTime() - dateNow.getTime();                
+		delete dateNow;
+
+		if(amount < 0){
+				location.href=urlsitio;
+		}
+		else{
+				days=0;hours=0;mins=0;secs=0;out="";
+
+				amount = Math.floor(amount/1000);
+
+				days=Math.floor(amount/86400);
+				amount=amount%86400;
+
+				hours=Math.floor(amount/3600);
+				amount=amount%3600;
+
+				mins=Math.floor(amount/60);
+				amount=amount%60;
+
+				secs=Math.floor(amount);
+
+				if(days != 0){out += days +" dia"+((days!=1)?"s":"")+", ";}
+				if(days != 0 || hours != 0){out += hours +" hora"+((hours!=1)?"s":"")+", ";}
+				if(days != 0 || hours != 0 || mins != 0){out += mins +" minuto"+((mins!=1)?"s":"")+", ";}
+				out += secs +" segundos";
+				document.getElementById('countbox').innerHTML=out;
+				
+				setTimeout("GetCount()", 1000);
+				return out;
+		}
+}
+	console.log(GetCount());
+
+</script>
 
 
 

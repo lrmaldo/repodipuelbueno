@@ -16,13 +16,13 @@
 Route::get('home', 'HomeController@index');
 
 
-Route::resource('/','FrontController');
+//Route::resource('/','FrontController');
 Route::get('/contacto','FrontController@contacto');
 
 
 //eventos 
-
-Route::resource('eventos','EventosController');
+//Route::get('/','EventosController@create');
+Route::resource('/eventos','EventosController');
 Route::post('eventos/store','EventosController@store');
 
 
@@ -30,7 +30,7 @@ Route::post('eventos/store','EventosController@store');
 
 
 ////inscripciones
-Route::resource('/inscripciones','FrontController@inscripciones');
+Route::resource('/','FrontController@inscripciones');
 
 ///Usuario
 
