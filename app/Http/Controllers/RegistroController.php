@@ -16,7 +16,7 @@ class RegistroController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		
 	}
 
 	/**
@@ -40,6 +40,7 @@ class RegistroController extends Controller {
 		inscripciones::create([
 			'nombre' => $request->input('nombre'),
 			'direccion' => $request->input('direccion'),
+			'cp' =>$request->input('cp'),
 			'municipio' =>$request->input('municipio'),
 			'num_celular'=> $request->input('celular'),
 			'email'=> $request->input('email'),

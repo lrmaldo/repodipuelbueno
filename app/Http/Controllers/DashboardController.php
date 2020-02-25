@@ -20,7 +20,10 @@ class DashboardController extends Controller {
 	 */
 	public function index()
 	{
-		return view('dashboard.index');
+		$user = \App\User::All();
+		$registros = \App\inscripciones::All();
+		return view('dashboard.index',compact('registros'));
+		//return view('dashboard.index');
 	}
 
 	/**

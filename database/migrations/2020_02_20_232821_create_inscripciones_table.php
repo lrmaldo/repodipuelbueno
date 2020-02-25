@@ -19,7 +19,7 @@ class CreateInscripcionesTable extends Migration {
 				$table->string('nombre');
 				$table->string('direccion');
 				$table->string('municipio');
-				//$table->string('CP');
+				$table->string('cp');
 				$table->string('num_celular');
 				$table->string('email')->unique();
 				$table->string('edad');

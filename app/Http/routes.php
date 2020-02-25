@@ -11,7 +11,7 @@
 |
 */
 
-//Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
@@ -40,7 +40,7 @@ Route::post('/registro/store','RegistroController@store');
 
 
 ////inscripciones
-Route::resource('/','FrontController@inscripciones');
+//Route::resource('/','FrontController@inscripciones');
 
 ///Usuario
 

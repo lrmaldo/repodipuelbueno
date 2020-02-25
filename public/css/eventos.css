@@ -1,7 +1,7 @@
 
     html,body{
        
-        background-image: url('/img/eventos/portada_evento.png');
+        background-image: url('/img/eventos/portada_evento.jpg');
        
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -92,3 +92,8 @@
     .links a{
     margin-left: 4px;
     }    
+
+    .justify-content-flex {
+        -ms-flex-pack: center!important;
+        justify-content: center!important;
+    }

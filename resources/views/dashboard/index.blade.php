@@ -1,136 +1,81 @@
 
 @extends('layouts.dashboardIndex')
-	@section('content')
+  @section('content')
+  
+  <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">Total de usuarios registrados </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">Warning Card</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+</div>
 		
   <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 
-<h2>Section title</h2>
+<h2>Registros</h2>
 <div class="table-responsive">
-  <table class="table table-striped table-sm">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Header</th>
-        <th>Header</th>
-        <th>Header</th>
-        <th>Header</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1,001</td>
-        <td>Lorem</td>
-        <td>ipsum</td>
-        <td>dolor</td>
-        <td>sit</td>
-      </tr>
-      <tr>
-        <td>1,002</td>
-        <td>amet</td>
-        <td>consectetur</td>
-        <td>adipiscing</td>
-        <td>elit</td>
-      </tr>
-      <tr>
-        <td>1,003</td>
-        <td>Integer</td>
-        <td>nec</td>
-        <td>odio</td>
-        <td>Praesent</td>
-      </tr>
-      <tr>
-        <td>1,003</td>
-        <td>libero</td>
-        <td>Sed</td>
-        <td>cursus</td>
-        <td>ante</td>
-      </tr>
-      <tr>
-        <td>1,004</td>
-        <td>dapibus</td>
-        <td>diam</td>
-        <td>Sed</td>
-        <td>nisi</td>
-      </tr>
-      <tr>
-        <td>1,005</td>
-        <td>Nulla</td>
-        <td>quis</td>
-        <td>sem</td>
-        <td>at</td>
-      </tr>
-      <tr>
-        <td>1,006</td>
-        <td>nibh</td>
-        <td>elementum</td>
-        <td>imperdiet</td>
-        <td>Duis</td>
-      </tr>
-      <tr>
-        <td>1,007</td>
-        <td>sagittis</td>
-        <td>ipsum</td>
-        <td>Praesent</td>
-        <td>mauris</td>
-      </tr>
-      <tr>
-        <td>1,008</td>
-        <td>Fusce</td>
-        <td>nec</td>
-        <td>tellus</td>
-        <td>sed</td>
-      </tr>
-      <tr>
-        <td>1,009</td>
-        <td>augue</td>
-        <td>semper</td>
-        <td>porta</td>
-        <td>Mauris</td>
-      </tr>
-      <tr>
-        <td>1,010</td>
-        <td>massa</td>
-        <td>Vestibulum</td>
-        <td>lacinia</td>
-        <td>arcu</td>
-      </tr>
-      <tr>
-        <td>1,011</td>
-        <td>eget</td>
-        <td>nulla</td>
-        <td>Class</td>
-        <td>aptent</td>
-      </tr>
-      <tr>
-        <td>1,012</td>
-        <td>taciti</td>
-        <td>sociosqu</td>
-        <td>ad</td>
-        <td>litora</td>
-      </tr>
-      <tr>
-        <td>1,013</td>
-        <td>torquent</td>
-        <td>per</td>
-        <td>conubia</td>
-        <td>nostra</td>
-      </tr>
-      <tr>
-        <td>1,014</td>
-        <td>per</td>
-        <td>inceptos</td>
-        <td>himenaeos</td>
-        <td>Curabitur</td>
-      </tr>
-      <tr>
-        <td>1,015</td>
-        <td>sodales</td>
-        <td>ligula</td>
-        <td>in</td>
-        <td>libero</td>
-      </tr>
-    </tbody>
-  </table>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Nombre</th>
+                                                <th>Direccion</th>
+                                                <th>CP</th>
+                                                <th>municipio</th>
+                                                <th>Número</th>
+                                                <th>Email</th>
+                                                <th>Edad</th>
+                                                <th>Sexo</th>
+                                                <th>Instituto</th>
+                                                <th>Asistio</th>
+
+                                                
+                                            </tr>
+                                        </thead>
+                                       
+                                        <tbody>
+                                            @foreach($registros as $registro)
+                                            <tr>
+                                
+                                                <td>{{$registro->id}}</td>
+                                                <td>{{$registro->nombre}}</td>
+                                                <td>{{$registro->direccion}}</td>
+                                                <td>{{$registro->cp}}</td>
+                                                <td>{{$registro->municipio}}</td>
+                                                <td>{{$registro->num_celular}}</td>
+                                                <td>{{$registro->email}}</td>
+                                                <td>{{$registro->edad}}</td>
+                                                <td>{{$registro->sexo}}</td>
+                                                <td>{{$registro->instituto}}</td>
+                                                <td>{{$registro->asistio}}</td>
+                                          
+                                                <td>    
+                                                    <a href="{{ url('/usuario/' . $registro->id . '/edit') }}" class="btn btn-info btn-xs"><i class="fas fa-edit"></i> Editar </a>
+                                                    
+                                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#exampleModal"> <i class="far fa-trash-alt"></i>
+                                                        Eliminar
+                                                        </button>
+                                                     
+                                                    
+                                                    </td>
+                                                
+                                            </tr>
+                                            @endforeach
+                                        </tboby>
+                                        </table>
 </div>
 </main>
 </div>

@@ -32,7 +32,7 @@
   
   <body>
 <div class="container">
-	<div class="d-flex justify-content-center h-100">
+	<div class="d-flex justify-content-flex h-100">
 		<div class="card">
 			<div class="card-header text-center">
 
@@ -68,9 +68,17 @@
 							<label class="col-md-4 control-label">Dirección Completa:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="direccion" placeholder="Calle o Av, Número,  CP"  required>
+								<input type="text" class="form-control" name="direccion" placeholder="Calle o Av, Número"  required>
 							</div>
 						</div>  
+						<div class="form-group">
+						<div class="input-group-prepend">
+							<label class="col-md-4 control-label">CP:*</label>
+							</div>
+							<div class="col-md-8">
+								<input type="text" class="form-control" name="cp" placeholder="Código Postal"  required>
+							</div>
+						</div>
 
 						 
 
@@ -131,7 +139,7 @@
 									
 							<select name="sexo" class="form-control"  required>
         					<option >Masculino</option>
-        					<option>Feminino</option>
+        					<option>Femenino</option>
 							</select>
 							</div>
 						</div>
@@ -139,10 +147,10 @@
 						
 						<div class="form-group">
 						<div class="input-group-prepend">
-							<label class="col-md-4 control-label">Instituto Educativo:*</label>
+							<label class="col-md-4 control-label">Dependencia o institución educativa:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="instituto" placeholder="Instituto educativo"   required>
+								<input type="text" class="form-control" name="instituto" placeholder="Dependencia o Institución educativa"   required>
 							</div>
 						</div>
 
