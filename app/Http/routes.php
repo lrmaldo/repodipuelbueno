@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
@@ -34,13 +34,14 @@ Route::resource('mail','MailController');
 
 
 //registo
-Route::resource('/registro','RegistroController');
+//Route::get('/registro','RegistroController@index');
 
 Route::post('/registro/store','RegistroController@store');
 
 
+
 ////inscripciones
-//Route::resource('/','FrontController@inscripciones');
+Route::resource('/','FrontController@inscripciones');
 
 ///Usuario
 
