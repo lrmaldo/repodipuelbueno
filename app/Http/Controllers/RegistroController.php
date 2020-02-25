@@ -37,7 +37,7 @@ class RegistroController extends Controller {
 	public function store(Request $request)
 	{
 		 
-		/**inscripciones::create([
+		inscripciones::create([
 			'nombre' => $request->input('nombre'),
 			'direccion' => $request->input('direccion'),
 			'municipio' =>$request->input('municipio'),
@@ -48,7 +48,7 @@ class RegistroController extends Controller {
 			'instituto'=>$request->input('instituto'),
 			'id_evento'=>'1',
 		]);
-		*/
+		
 		$data = $request->input('email');
 		
 
