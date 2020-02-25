@@ -3,8 +3,9 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\inscripciones;
-
+use Mail;
 use Illuminate\Http\Request;
+
 
 class RegistroController extends Controller {
 
@@ -35,7 +36,8 @@ class RegistroController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		inscripciones::create([
+		 
+		/**inscripciones::create([
 			'nombre' => $request->input('nombre'),
 			'direccion' => $request->input('direccion'),
 			'municipio' =>$request->input('municipio'),
@@ -46,8 +48,33 @@ class RegistroController extends Controller {
 			'instituto'=>$request->input('instituto'),
 			'id_evento'=>'1',
 		]);
+		*/
+		$data = $request->input('email');
 		
-		return "registro exitoso";
+
+		$subject = "Asunto del correo";
+        $for = $data;
+        Mail::send('emails.registroMail',$request->all(), function($msj) use($subject,$for){
+            $msj->from("leodeveloper93@gmail.com","Soporte Sattlink");
+            $msj->subject($subject);
+            $msj->to($for);
+        });
+			
+		/**Mail::send('emails.registroMail',$request->all(),function($msj){
+				$msj->subject("Te has inscrito al proximo evento");
+				$msj->to( "lrmaldo@gmail.com");
+		});
+		**/
+			//$registro = $request->all();
+			
+		/**Mail::send('emails.registroMail', ['registro' => $registro], function ($m) use ($registro) {
+            $m->from('hello@app.com', 'Your Application');
+
+            $m->to($name, "s")->subject('¡Te has inscrito con exito!');
+		});**/
+		$n = $request->input('nombre');
+		$datos =array('nombre' => $n); 
+		 return view('inscripciones.felicidades',$datos);
 	}
 
 	/**
@@ -56,9 +83,9 @@ class RegistroController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function registroexitoso()
 	{
-		//
+		
 	}
 
 	/**

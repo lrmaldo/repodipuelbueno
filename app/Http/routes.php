@@ -27,6 +27,11 @@ Route::post('eventos/store','EventosController@store');
 
 
 
+//email
+Route::resource('mail','MailController');
+
+
+
 
 //registo
 Route::resource('/registro','RegistroController');
