@@ -10,7 +10,7 @@
     <h4>Bienvenido al evento</h4>
     
         <h2> Juntos Hicimos Historia</h2>
-        <p>Fecha y hora: Miércoles 25 de Marzo del 2020, a las 12 pm</p>
+        <p>Fecha y hora: Miércoles 25 de Marzo del 2020, a las <strong>11:00am</strong> </p>
 
 
         <div class=text-center>
