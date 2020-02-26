@@ -1,11 +1,12 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests\RegistroRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\inscripciones;
 use Mail;
 use Illuminate\Http\Request;
-
+use Session;
 
 class RegistroController extends Controller {
 
@@ -34,9 +35,12 @@ class RegistroController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(RegistroRequest $request)
 	{
-		 
+		
+		//$email = DB::table('users')->where('email', $request->input('email'));
+	
+
 		inscripciones::create([
 			'nombre' => $request->input('nombre'),
 			'direccion' => $request->input('direccion'),
@@ -50,6 +54,10 @@ class RegistroController extends Controller {
 			'id_evento'=>'1',
 		]);
 		
+		
+		
+
+		//obtener un el email
 		$data = $request->input('email');
 		
 

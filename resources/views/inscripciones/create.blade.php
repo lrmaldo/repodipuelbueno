@@ -31,6 +31,17 @@
   <!-- Navigation -->
   
   <body>
+ @if(count($errors)>0)
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+ 	 @foreach ($errors->all() as $error)
+	  <strong>{{ $error }}</strong> 
+	  @endforeach
+  
+  
+</div>
+@endif
+
+
 <div class="container">
 	<div class="d-flex justify-content-flex h-100">
 		<div class="card">
@@ -59,7 +70,7 @@
 							<label class="col-md-4 control-label">Nombre Completo:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="nombre" value="{{ old('name') }}" placeholder="Nombre completo" required>
+								<input type="text" class="form-control" name="nombre" value="{{ old('name') }}" placeholder="Nombre completo" >
 							</div>
 						</div>
 
@@ -68,7 +79,7 @@
 							<label class="col-md-4 control-label">Dirección Completa:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="direccion" placeholder="Calle o Av, Número"  required>
+								<input type="text" class="form-control" name="direccion" placeholder="Calle o Av, Número"  >
 							</div>
 						</div>  
 						<div class="form-group">
@@ -76,7 +87,7 @@
 							<label class="col-md-4 control-label">CP:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="cp" placeholder="Código Postal"  required>
+								<input type="text" class="form-control" name="cp" placeholder="Código Postal"  >
 							</div>
 						</div>
 
@@ -88,7 +99,7 @@
 							<label class="col-md-4 control-label">Municipio:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="municipio" placeholder="Ejem. San Juan Bautista Tuxtepec"  required>
+								<input type="text" class="form-control" name="municipio" placeholder="Ejem. San Juan Bautista Tuxtepec"  >
 							</div>
 						</div>
 
@@ -101,7 +112,7 @@
 							</div>
 							
 							<div class="col-md-8">
-								<input type="phone" class="form-control" name="celular" placeholder="10 digitos" required>
+								<input type="phone" class="form-control" name="celular" placeholder="10 digitos" >
 							</div>
 						</div>
 
@@ -112,7 +123,7 @@
 							</div>
 							
 							<div class="col-md-8">
-								<input type="email" class="form-control" name="email" placeholder="ejemplo@correo.com" required>
+								<input type="email" class="form-control" name="email" placeholder="ejemplo@correo.com" >
 							</div>
 						</div>
                         
@@ -126,7 +137,7 @@
 							<label class="col-md-4 control-label">Edad:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="number" min="15" max="100"  class="form-control" name="edad" value="18"  required>
+								<input type="number" min="15" max="100"  class="form-control" name="edad" value="18"  >
 							</div>
 						</div>
 
@@ -137,7 +148,7 @@
 							</div>
 							<div class="col-md-8">
 									
-							<select name="sexo" class="form-control"  required>
+							<select name="sexo" class="form-control"  >
         					<option >Masculino</option>
         					<option>Femenino</option>
 							</select>
@@ -150,7 +161,7 @@
 							<label class="col-md-4 control-label">Dependencia o institución educativa:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="instituto" placeholder="Dependencia o Institución educativa"   required>
+								<input type="text" class="form-control" name="instituto" placeholder="Dependencia o Institución educativa"  >
 							</div>
 						</div>
 
