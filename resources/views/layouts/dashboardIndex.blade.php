@@ -625,7 +625,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; DiME 2020</div>
+                            <div class="text-muted">Copyright &copy; Sattlink 2020</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
@@ -648,6 +648,6 @@
      
         <!--script type="text/javascript" src="{{ asset('js/jquery-1.8.3.min.js') }}" charset="UTF-8"></script-->
 
-        ./
+       
     </body>
 </html>
