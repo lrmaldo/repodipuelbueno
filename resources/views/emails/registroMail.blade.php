@@ -7,7 +7,7 @@
 </head>
 <body>
 <p>Hola! {{$nombre}}.</p>
-    <h4>Ya tienes tu lugar reservado para el siguiente evento</h4>
+    <h4>Bienvenido al evento</h4>
     
         <h2> Juntos Hicimos Historia</h2>
         <p>Fecha y hora: Miércoles 25 de Marzo del 2020, a las 12 pm</p>
