@@ -87,7 +87,7 @@
 							<label class="col-md-4 control-label">CP:*</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="cp" placeholder="Código Postal"  >
+								<input type="text" class="form-control" name="cp" placeholder="Código Postal" id="cpNumber" >
 							</div>
 						</div>
 
@@ -112,7 +112,7 @@
 							</div>
 							
 							<div class="col-md-8">
-								<input type="phone" class="form-control" name="celular" placeholder="10 digitos" >
+								<input type="phone" class="form-control" id="phoneNumber" name="celular" placeholder="10 digitos" >
 							</div>
 						</div>
 
@@ -186,6 +186,30 @@
 
 
 
+
+const inputElement = document.getElementById('phoneNumber');
+const cp = document.getElementById('cpNumber');
+
+
+cp.addEventListener('keypress', function (e){
+	if (!soloNumeros(event)){
+  	e.preventDefault();
+  }
+})
+
+
+inputElement.addEventListener('keypress', function (e){
+	if (!soloNumeros(event)){
+  	e.preventDefault();
+  }
+})
+
+//Solo permite introducir numeros.
+function soloNumeros(e){
+    var key = e.charCode;
+    console.log(key);
+    return key >= 48 && key <= 57;
+}
 
 </script>
 
