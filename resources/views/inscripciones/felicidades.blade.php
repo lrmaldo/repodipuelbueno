@@ -68,7 +68,7 @@
     <div class="masthead-content">
       <div class="container animated  bounceInDown">
         <h1 class="masthead-heading mb-0 ">Registro Exitoso</h1>
-        <h2 class="masthead-subheading mb-0">Hola {{$nombre}} tu lugar ya esta apartado no faltes</h2>
+        <h2 class="masthead-subheading mb-0">Hola {{$nombre}}</h2>
         <h2 class="masthead-subheading mb-0">Te hemos enviado los datos del evento a tu correo</h2>
         <p >Te invitamos a ver el siguiente video</p>
        

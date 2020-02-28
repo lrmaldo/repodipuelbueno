@@ -20,9 +20,25 @@ class DashboardController extends Controller {
 	 */
 	public function index()
 	{
-		$user = \App\User::All();
+
+		$no_asistio  = \App\inscripciones::where('asistio', '<=', '0')->get();
+		$contador_noasistio = $no_asistio->count();
+
+		$asistio = \App\inscripciones::where('asistio', '<=', '1')->get();
+		$contador_asistio = $asistio->count();
+		$total_asis = ($contador_asistio - $contador_noasistio);
+	
+	
+	
+	
 		$registros = \App\inscripciones::All();
-		return view('dashboard.index',compact('registros'));
+		$total_registros = $registros->count();
+
+
+
+		$user = \App\User::All();
+		
+		return view('dashboard.index',compact('registros','contador_noasistio','total_asis','total_registros'));
 		//return view('dashboard.index');
 	}
 
@@ -31,9 +47,24 @@ class DashboardController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function graficas()
 	{
-		//
+		///consulta de generos
+		$femenino = \App\inscripciones::where('sexo', '<=', 'fenemino')->count();
+		$masculino = \App\inscripciones::where('sexo', '<=', 'masculino')->count();
+		$registros = \App\inscripciones::All();
+
+		//consultas de edades
+		$edad18_24 = \App\inscripciones::whereBetween('edad', [18, 24])->count();
+		$edad25_30 = \App\inscripciones::whereBetween('edad', [25, 30])->count();
+		$edad31_40 = \App\inscripciones::whereBetween('edad', [31, 40])->count();
+		$edad41_60 = \App\inscripciones::whereBetween('edad', [41, 60])->count();
+		$edad61_70 = \App\inscripciones::whereBetween('edad', [61, 70])->count();
+		$edad71_80 = \App\inscripciones::whereBetween('edad', [71, 80])->count();
+
+		
+
+		return view('dashboard.graficas',compact('femenino','masculino','edad18_24','edad25_30','edad31_40','edad41_60','edad61_70','edad71_80'));
 	}
 
 	/**

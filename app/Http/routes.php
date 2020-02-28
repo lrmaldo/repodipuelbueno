@@ -51,9 +51,15 @@ Route::post('/usuario/store','UsuarioController@store');
 
 //Route::post('/usuario/update','UsuarioController@update');
 //Router::post('/usuario/edit','UsuarioController@edit');
+
+
+
 //controlador de dashboard
 Route::resource('dashboard','DashboardController');
 Route::get("/login",'DashboardController@login');
+
+//grafica
+Route::get('/grafica','DashboardController@graficas');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

@@ -8,16 +8,18 @@
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
         <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ asset('/css/bootstrap-datetimepicker.min.css') }}">
-        <link href=" {{ asset('https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" crossorigin="anonymous" />
-        <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js') }}" crossorigin="anonymous"></script>
         <script src=" {{ asset('https://code.jquery.com/jquery-3.4.1.min.js') }}" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.js') }}" charset="UTF-8"></script>
-        <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.es.js') }}" charset="UTF-8"></script>
+        <link href="{{asset('https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" crossorigin="anonymous" />
+        <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js')}}" crossorigin="anonymous"></script>
+        
     </head>
+
+
+
+
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">DiME</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
+            <a class="navbar-brand" href="/dashboard">DiME</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
             ><!-- Navbar Search-->
            
             <!-- Navbar-->
@@ -37,8 +39,10 @@
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="{{ url('/dashboard') }}"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard</a
-                            >
+                                Dashboard</a >
+                                <a class="nav-link" href="{{url('/grafica')}}"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Estadisticas</a>
                            
                             <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-user fa-fw"></i></div>
@@ -639,12 +643,16 @@
       
         <script src=" {{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
         <script src="{{ asset('js/scripts.js') }}"></script>
-        <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js') }}" crossorigin="anonymous"></script>
-        <!--script src="{{ asset('assets/demo/chart-area-demo.js') }}"></script>
-        <script src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script>
-        <script src="{{ asset('https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js') }}" crossorigin="anonymous"></script>
-        <script src="{{ asset('https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js') }}" crossorigin="anonymous"></script>
-        <script src="{{ asset('assets/demo/datatables-demo.js') }}"></script-->
+        <script src="{{asset('https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js')}}" crossorigin="anonymous"></script>
+        <script src="{{asset('https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js')}}" crossorigin="anonymous"></script>
+        <script src="{{asset('js/datatables-demo.js')}}"></script>
+        <!--script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js') }}" crossorigin="anonymous"></script-->
+        
+       
+        <!--script src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script-->
+      
+     
+        
      
         <!--script type="text/javascript" src="{{ asset('js/jquery-1.8.3.min.js') }}" charset="UTF-8"></script-->
 
