@@ -51,7 +51,7 @@ class DashboardController extends Controller {
 	{
 		///consulta de generos
 		$femenino = \App\inscripciones::where('sexo', '<=', 'fenemino')->count();
-		$masculino = \App\inscripciones::where('sexo', '<=', 'masculino')->count();
+		$masculino = \App\inscripciones::where('sexo', '=', 'masculino')->count();
 		$registros = \App\inscripciones::All();
 
 		//consultas de edades
