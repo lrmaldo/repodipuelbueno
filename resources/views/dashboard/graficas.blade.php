@@ -140,7 +140,7 @@ var myLineChart = new Chart(ctx, {
       label: "cantidad",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [edad18_24, edad25_30, edad31_40, edad41_60,edad71_80],
+      data: [edad18_24, edad25_30, edad31_40, edad41_60,edad61_70,edad71_80],
     }],
   },
   options: {
