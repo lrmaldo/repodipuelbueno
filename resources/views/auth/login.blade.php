@@ -16,8 +16,8 @@
 
 					<form class="form-signin" role="form" method="POST" action="{{ url('/auth/login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      					<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+						<img class="mb-4" src="{{ asset('img/dime.jpg') }}" alt="" width="72" height="72">
+      					<h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
       
 					
 						<div class="form-group">
@@ -36,11 +36,11 @@
 
 						<div class="form-group">
 							
-								<div class="checkbox">
+								<!--div class="checkbox">
 									<label>
 										<input type="checkbox" name="remember">recuerdame
 									</label>
-								</div>
+								</div-->
 							
 						</div>
 
