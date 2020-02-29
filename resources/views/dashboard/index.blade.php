@@ -3,9 +3,6 @@
   @section('content')
 
 		
-  <!--canvas class="my-4" id="myChart" width="900" height="380"></canvas-->
-  <!--canvas id="myBarChart" width="100%" height="40"></canvas-->
- 
 
   
                         <div class="row">
@@ -29,7 +26,7 @@
        
                         </div>
   <script>
-
+////**************para obtener la fecha y hora de la actualizacion de las  graficas */
   var d = new Date();
 document.getElementById("demo").innerHTML = d;
 document.getElementById("fecha2").innerHTML =d;
@@ -37,10 +34,13 @@ document.getElementById("fecha2").innerHTML =d;
     $(document).ready( function () {
     $('dataTable').DataTable();
 } );
-    </script>
-
+    </script>   
+                        <!-- tabla y botones para generr pdf y excel-->
                       <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Registros</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Registros  
+                             <a href="{{ url('dashboard/store/xlsx') }}"><button class="btn btn-success">Descargar en Excel xlsx</button></a>
+                            <a href="{{ url('dashboard/store/pdf') }}"><button class="btn btn-success">Descargar en pdf</button></a>
+                            </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -76,12 +76,17 @@ document.getElementById("fecha2").innerHTML =d;
                                                 <td>{{$registro->instituto}}</td>
                                                 <td>{{$registro->asistio}}</td>
                                                 <td> 
-                                                <a href="{{ url('/usuario/' . $registro->id . '/edit') }}" class="btn btn-info btn-xs"><i class="fas fa-edit"></i> Editar </a>
+                                                <a href="{{ url('/dashboard/' . $registro->id . '/edit') }}" class="btn btn-info btn-xs"> Editar </a>
+                                               
                                                 
-                                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#exampleModal"> <i class="far fa-trash-alt"></i>
-                                                        Eliminar
-                                                        </button>
                                                         </td>
+
+
+
+                                                                                                                                
+                                                                      
+
+                                                        
                                             </tr>
                                             @endforeach
                                             </tbody>
@@ -91,10 +96,20 @@ document.getElementById("fecha2").innerHTML =d;
                         </div>
                     </div>
 
+
+
+
+
+          
+
+
            
-</main>
+
 </div>
 </div>
+ 
+
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -117,7 +132,7 @@ feather.replace()
 
 <script>
 
-
+///// codigo js para generar la grafica pastel de asistencias del evento 
 
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';

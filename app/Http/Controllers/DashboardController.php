@@ -4,6 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Excel;
+use Redirect;
 
 class DashboardController extends Controller {
 
@@ -11,7 +13,7 @@ class DashboardController extends Controller {
 
 	
 	public function __construct(){
-		$this->middleware('auth',['only'=>'index']);
+		$this->middleware('auth',['only'=>'index','graficas','store']);
 	}
 	/**
 	 * Display a listing of the resource.
@@ -72,10 +74,19 @@ class DashboardController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($type)
 	{
-		//
+		$data = \App\inscripciones::get()->toArray();
+            
+        return Excel::create('registrosdb-'.date("d-m-Y h:i:sa"), function($excel) use ($data) {
+            $excel->sheet('registros', function($sheet) use ($data)
+            {
+				$sheet->fromArray($data);
+				$sheet->setOrientation('landscape');
+            });
+        })->download($type);
 	}
+
 
 	/**
 	 * Display the specified resource.
@@ -96,18 +107,39 @@ class DashboardController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$registros = \App\inscripciones::find($id);
+		return view('inscripciones.edit',['registro' => $registros]);
+		
+		
+		
 	}
 
 	/**
 	 * Update the specified resource in storage.
-	 *
+	 * actualizar asistencia del usuario 0 no asistio y 1 asistio
+	 * se usa este controlador para poder usarlo desde el dashboard 
+	 * espero no sea confuso 
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id ,Request $request)
 	{
-		//
+		$registro = \App\inscripciones::find($id);
+		$registro->nombre = $request->nombre;
+		$registro->direccion =$request->direccion;
+		$registro->cp =$request->cp;
+		$registro->num_celular =$request->celular;
+		$registro->email =$request->email;
+		$registro->edad =$request->edad;
+		$registro->sexo =$request->sexo;
+		$registro->instituto =$request->instituto;
+		$registro->asistio = $request->asistio;
+
+
+
+		$registro->save();
+		return  Redirect::to('/dashboard');
+
 	}
 
 	/**
@@ -118,7 +150,9 @@ class DashboardController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		\App\inscripciones::destroy($id);
+		return  Redirect::to('/dashboard');
+		//return $id;
 	}
 
 	public function login(){

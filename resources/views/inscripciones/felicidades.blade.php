@@ -71,6 +71,7 @@
         <h2 class="masthead-subheading mb-0">Hola {{$nombre}}</h2>
         <h2 class="masthead-subheading mb-0">Te hemos enviado los datos del evento a tu correo</h2>
         <p >Te invitamos a ver el siguiente video</p>
+        <p> Te vemos pronto</p>
        
         <button type="button" class="btn btn-primary btn-xl rounded-pill mt-5 video-btn animated infinite bounce delay-3s " data-toggle="modal" data-src="https://www.youtube.com/embed/K2Q5X9XIKKU" data-target="#myModal">
   Ver video
@@ -83,7 +84,7 @@
       </div>
       </div>
 
-      <p> Te vemos pronto</p>
+    
       
     </div>
   

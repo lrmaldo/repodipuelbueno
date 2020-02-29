@@ -58,6 +58,13 @@ Route::post('/usuario/store','UsuarioController@store');
 Route::resource('dashboard','DashboardController');
 Route::get("/login",'DashboardController@login');
 
+//export excel
+
+Route::get('/dashboard/store/{type}','DashboardController@store');
+Route::delete('/dashboard/destroy/{id}','DashboardController@destroy');
+
+
+
 //grafica
 Route::get('/grafica','DashboardController@graficas');
 

@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Redirect;
+use Session;
 
 use Illuminate\Http\Request;
 
@@ -35,7 +36,7 @@ class UsuarioController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		\App\User::create([
 			'name'=> $request->input('name'),
